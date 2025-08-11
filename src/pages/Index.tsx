@@ -1,12 +1,146 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { TrendingUp, Users, Award, BookOpen, Target, Shield } from 'lucide-react';
 
 const Index = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: TrendingUp,
+      title: t('expertTraining'),
+      description: t('expertTrainingDesc')
+    },
+    {
+      icon: Target,
+      title: t('practicalApproach'),
+      description: t('practicalApproachDesc')
+    },
+    {
+      icon: Award,
+      title: t('certification'),
+      description: t('certificationDesc')
+    }
+  ];
+
+  const stats = [
+    { number: '10,000+', label: 'Students Trained' },
+    { number: '95%', label: 'Success Rate' },
+    { number: '50+', label: 'Expert Instructors' },
+    { number: '24/7', label: 'Support Available' }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+                {t('heroTitle')}
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 animate-slide-up">
+                {t('heroSubtitle')}
+              </p>
+              <div className="space-x-4 animate-slide-up">
+                <Button variant="hero" size="xl">
+                  {t('heroButton')}
+                </Button>
+                <Button variant="outline" size="xl">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            <div className="lg:w-1/2 flex justify-center">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
+                  alt="Momentum Trading Pro" 
+                  className="w-64 h-64 lg:w-80 lg:h-80 object-contain animate-pulse-glow"
+                />
+                <div className="absolute inset-0 bg-gradient-trading opacity-20 rounded-full blur-3xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              {t('features')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Discover why thousands of traders choose Momentum Trading Pro for their education
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="text-center hover:shadow-trading transition-all duration-300 hover:scale-105 group">
+                <CardHeader>
+                  <div className="mx-auto w-16 h-16 bg-gradient-trading rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-trading">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            Ready to Start Your Trading Journey?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Join thousands of successful traders who have mastered the markets with our proven methods
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90">
+              {t('getStarted')}
+            </Button>
+            <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary">
+              View Courses
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
