@@ -397,7 +397,18 @@ export const translations = {
     systemStatus: 'System Status',
 
     // General
-    pendingStatus: 'Pending'
+    pendingStatus: 'Pending',
+    
+    // Additional buttons and navigation
+    learnMore: 'Learn More',
+    viewCourses: 'View Courses',
+    teacherDashboard: 'Teacher Dashboard',
+    adminDashboard: 'Admin Dashboard',
+    curatorDashboard: 'Curator Dashboard',
+    accessDashboard: 'Access Dashboard',
+    dashboardDescription: 'Access your personalized dashboard to manage courses, track progress, and more',
+    roleBasedAccess: 'Role-Based Access',
+    selectRoleAccess: 'Select your role to access the appropriate dashboard and tools'
   },
   ru: {
     // Navigation
@@ -795,7 +806,18 @@ export const translations = {
     systemStatus: 'Статус системы',
 
     // General
-    pendingStatus: 'В ожидании'
+    pendingStatus: 'В ожидании',
+    
+    // Additional buttons and navigation
+    learnMore: 'Узнать больше',
+    viewCourses: 'Просмотреть курсы',
+    teacherDashboard: 'Панель преподавателя',
+    adminDashboard: 'Панель администратора',
+    curatorDashboard: 'Панель куратора',
+    accessDashboard: 'Доступ к панели',
+    dashboardDescription: 'Получите доступ к персонализированной панели для управления курсами, отслеживания прогресса и многого другого',
+    roleBasedAccess: 'Доступ по ролям',
+    selectRoleAccess: 'Выберите свою роль для доступа к соответствующей панели и инструментам'
   }
 };
 

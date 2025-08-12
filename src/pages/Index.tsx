@@ -4,7 +4,8 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, Users, Award, BookOpen, Target, Shield } from 'lucide-react';
+import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -34,6 +35,30 @@ const Index = () => {
     { number: '24/7', label: 'Support Available' }
   ];
 
+  const dashboards = [
+    {
+      icon: Users,
+      title: t('teacherDashboard'),
+      description: t('dashboardDescription'),
+      path: '/dashboard/teacher',
+      variant: 'default' as const
+    },
+    {
+      icon: Settings,
+      title: t('adminDashboard'),
+      description: t('dashboardDescription'),
+      path: '/dashboard/admin',
+      variant: 'secondary' as const
+    },
+    {
+      icon: BarChart3,
+      title: t('curatorDashboard'),
+      description: t('dashboardDescription'),
+      path: '/dashboard/curator',
+      variant: 'outline' as const
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -50,12 +75,16 @@ const Index = () => {
                 {t('heroSubtitle')}
               </p>
               <div className="space-x-4 animate-slide-up">
-                <Button variant="hero" size="xl">
-                  {t('heroButton')}
-                </Button>
-                <Button variant="outline" size="xl">
-                  Learn More
-                </Button>
+                <Link to="/register">
+                  <Button variant="hero" size="xl">
+                    {t('heroButton')}
+                  </Button>
+                </Link>
+                <Link to="/about">
+                  <Button variant="outline" size="xl">
+                    {t('learnMore')}
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="lg:w-1/2 flex justify-center">
@@ -120,6 +149,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Dashboard Access Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              {t('roleBasedAccess')}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              {t('selectRoleAccess')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {dashboards.map((dashboard, index) => (
+              <Card key={index} className="text-center hover:shadow-trading transition-all duration-300 hover:scale-105 group">
+                <CardHeader>
+                  <div className="mx-auto w-16 h-16 bg-gradient-trading rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <dashboard.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-xl">{dashboard.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <CardDescription className="text-base">
+                    {dashboard.description}
+                  </CardDescription>
+                  <Link to={dashboard.path}>
+                    <Button variant={dashboard.variant} className="w-full">
+                      {t('accessDashboard')}
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-trading">
         <div className="container mx-auto px-4 text-center">
@@ -130,12 +196,16 @@ const Index = () => {
             Join thousands of successful traders who have mastered the markets with our proven methods
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90">
-              {t('getStarted')}
-            </Button>
-            <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary">
-              View Courses
-            </Button>
+            <Link to="/register">
+              <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90">
+                {t('getStarted')}
+              </Button>
+            </Link>
+            <Link to="/courses">
+              <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary">
+                {t('viewCourses')}
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
