@@ -106,7 +106,7 @@ const Reports = () => {
     }
   };
 
-  const getTypeBadge = (type: string) => {
+  const getTypeBadge = (typeKey: string) => {
     const typeColors = {
       user: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
       course: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
@@ -116,8 +116,8 @@ const Reports = () => {
     };
     
     return (
-      <Badge className={typeColors[type as keyof typeof typeColors]}>
-        {t(type)}
+      <Badge className={typeColors[typeKey as keyof typeof typeColors]}>
+        {t(typeKey as any)}
       </Badge>
     );
   };

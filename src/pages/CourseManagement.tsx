@@ -109,7 +109,7 @@ const CourseManagement = () => {
     }
   };
 
-  const getCategoryBadge = (category: string) => {
+  const getCategoryBadge = (categoryKey: string) => {
     const categoryColors = {
       beginner: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
       intermediate: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
@@ -117,8 +117,8 @@ const CourseManagement = () => {
     };
     
     return (
-      <Badge className={categoryColors[category as keyof typeof categoryColors]}>
-        {t(category)}
+      <Badge className={categoryColors[categoryKey as keyof typeof categoryColors]}>
+        {t(categoryKey as any)}
       </Badge>
     );
   };

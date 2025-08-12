@@ -59,7 +59,7 @@ const UserManagement = () => {
     }
   };
 
-  const getRoleBadge = (role: string) => {
+  const getRoleBadge = (roleKey: string) => {
     const roleColors = {
       admin: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
       teacher: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
@@ -68,8 +68,8 @@ const UserManagement = () => {
     };
     
     return (
-      <Badge className={roleColors[role as keyof typeof roleColors]}>
-        {t(role)}
+      <Badge className={roleColors[roleKey as keyof typeof roleColors]}>
+        {t(roleKey as any)}
       </Badge>
     );
   };

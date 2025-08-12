@@ -48,7 +48,7 @@ const SecuritySettings = () => {
   const getEventBadge = (status: string) => {
     switch (status) {
       case 'success':
-        return <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">{t('success')}</Badge>;
+        return <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">{t('successLogin')}</Badge>;
       case 'blocked':
         return <Badge variant="destructive">{t('blocked')}</Badge>;
       case 'investigated':
@@ -269,10 +269,7 @@ const SecuritySettings = () => {
                 {securityEvents.map((event) => (
                   <div key={event.id} className="flex items-center justify-between p-3 border rounded-lg">
                     <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="font-medium">{t(event.type)}</span>
-                        {getEventBadge(event.status)}
-                      </div>
+                      <div className="font-medium">{t(event.type.replace('_', '') as any)}</div>
                       <div className="text-sm text-muted-foreground">
                         {event.user} • {event.ip} • {event.time}
                       </div>

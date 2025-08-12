@@ -19,6 +19,15 @@ import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import UserManagement from "./pages/UserManagement";
+import CourseManagement from "./pages/CourseManagement";
+import PaymentSettings from "./pages/PaymentSettings";
+import SecuritySettings from "./pages/SecuritySettings";
+import SystemMonitoring from "./pages/SystemMonitoring";
+import AnalyticsDashboard from "./pages/AnalyticsDashboard";
+import Reports from "./pages/Reports";
 
 const queryClient = new QueryClient();
 
@@ -36,10 +45,20 @@ const App = () => (
               <Route path="/courses" element={<Courses />} />
               <Route path="/prices" element={<Prices />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="/dashboard/student" element={<StudentDashboard />} />
               <Route path="/dashboard/teacher" element={<TeacherDashboard />} />
               <Route path="/dashboard/curator" element={<CuratorDashboard />} />
               <Route path="/dashboard/admin" element={<AdminDashboard />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/user-management" element={<UserManagement />} />
+              <Route path="/course-management" element={<CourseManagement />} />
+              <Route path="/payment-settings" element={<PaymentSettings />} />
+              <Route path="/security-settings" element={<SecuritySettings />} />
+              <Route path="/system-monitoring" element={<SystemMonitoring />} />
+              <Route path="/analytics-dashboard" element={<AnalyticsDashboard />} />
+              <Route path="/reports" element={<Reports />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/support" element={<Support />} />
               <Route path="/terms" element={<Terms />} />

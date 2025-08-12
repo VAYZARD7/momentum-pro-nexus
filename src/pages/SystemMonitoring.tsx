@@ -59,7 +59,7 @@ const SystemMonitoring = () => {
         return (
           <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
             <CheckCircle className="h-3 w-3 mr-1" />
-            {t('running')}
+            {t('isRunning')}
           </Badge>
         );
       case 'warning':
@@ -73,7 +73,7 @@ const SystemMonitoring = () => {
         return (
           <Badge variant="destructive">
             <AlertCircle className="h-3 w-3 mr-1" />
-            {t('error')}
+            {t('errorStatus')}
           </Badge>
         );
       default:
@@ -240,10 +240,10 @@ const SystemMonitoring = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Activity className="h-5 w-5" />
-                  {t('recentEvents')}
+                  {t('systemEvents')}
                 </CardTitle>
                 <CardDescription>
-                  {t('recentEventsDescription')}
+                  {t('systemEventsDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
