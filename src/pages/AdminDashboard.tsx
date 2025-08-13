@@ -15,6 +15,7 @@ import {
   Settings,
   BarChart3 
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AdminDashboard = () => {
   const { t } = useLanguage();
@@ -142,7 +143,9 @@ const AdminDashboard = () => {
                 </div>
                 <div className="flex gap-2 mt-6">
                   <Button variant="outline" className="flex-1">Export Data</Button>
-                  <Button variant="outline" className="flex-1">View Reports</Button>
+                  <Link to="/reports" className="flex-1">
+                    <Button variant="outline" className="w-full">View Reports</Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -181,30 +184,42 @@ const AdminDashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <Users className="h-6 w-6" />
-                  User Management
-                </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <BookOpen className="h-6 w-6" />
-                  Course Management
-                </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <DollarSign className="h-6 w-6" />
-                  Payment Settings
-                </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <Shield className="h-6 w-6" />
-                  Security Settings
-                </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <Server className="h-6 w-6" />
-                  System Monitoring
-                </Button>
-                <Button variant="outline" className="h-20 flex flex-col gap-2">
-                  <BarChart3 className="h-6 w-6" />
-                  Analytics Dashboard
-                </Button>
+                <Link to="/user-management">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <Users className="h-6 w-6" />
+                    User Management
+                  </Button>
+                </Link>
+                <Link to="/course-management">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <BookOpen className="h-6 w-6" />
+                    Course Management
+                  </Button>
+                </Link>
+                <Link to="/payment-settings">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <DollarSign className="h-6 w-6" />
+                    Payment Settings
+                  </Button>
+                </Link>
+                <Link to="/security-settings">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <Shield className="h-6 w-6" />
+                    Security Settings
+                  </Button>
+                </Link>
+                <Link to="/system-monitoring">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <Server className="h-6 w-6" />
+                    System Monitoring
+                  </Button>
+                </Link>
+                <Link to="/analytics-dashboard">
+                  <Button variant="outline" className="h-20 flex flex-col gap-2 w-full">
+                    <BarChart3 className="h-6 w-6" />
+                    Analytics Dashboard
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

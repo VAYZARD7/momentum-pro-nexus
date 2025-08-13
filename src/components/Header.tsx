@@ -89,12 +89,16 @@ const Header = () => {
           </Button>
 
           {/* Auth Buttons */}
-          <Button variant="ghost" size="sm">
-            {t('login')}
-          </Button>
-          <Button variant="hero" size="sm">
-            {t('getStarted')}
-          </Button>
+          <Link to="/login">
+            <Button variant="ghost" size="sm">
+              {t('login')}
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button variant="hero" size="sm">
+              {t('getStarted')}
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

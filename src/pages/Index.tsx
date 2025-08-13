@@ -186,6 +186,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Additional Value Proposition */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
+              Why Thousands Choose Momentum Trading Pro
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <Shield className="h-6 w-6 text-primary" />
+                  Risk Management Focus
+                </h3>
+                <p className="text-muted-foreground">
+                  Learn proven risk management strategies that protect your capital while maximizing returns. Our approach has helped thousands of traders avoid common pitfalls.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <UserCheck className="h-6 w-6 text-primary" />
+                  Personal Mentorship
+                </h3>
+                <p className="text-muted-foreground">
+                  Get paired with experienced traders who provide personalized guidance, review your trades, and help accelerate your learning curve.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <BookOpen className="h-6 w-6 text-primary" />
+                  Comprehensive Curriculum
+                </h3>
+                <p className="text-muted-foreground">
+                  From beginner fundamentals to advanced institutional strategies, our structured learning path adapts to your experience level and goals.
+                </p>
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <Users className="h-6 w-6 text-primary" />
+                  Active Community
+                </h3>
+                <p className="text-muted-foreground">
+                  Join a supportive community of like-minded traders sharing insights, strategies, and celebrating successes together.
+                </p>
+              </div>
+            </div>
+            <Link to="/about">
+              <Button variant="outline" size="lg">
+                Learn More About Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-trading">
         <div className="container mx-auto px-4 text-center">

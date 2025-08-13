@@ -388,6 +388,9 @@ export const translations = {
     // Additional missing keys
     page: 'Page',
     role: 'Role',
+    pricing: 'Pricing',
+    professional: 'Professional',
+    enterprise: 'Enterprise',
     type: 'Type',
     instructor: 'Instructor',
     totalStudents: 'Total Students',
@@ -817,7 +820,8 @@ export const translations = {
     accessDashboard: 'Доступ к панели',
     dashboardDescription: 'Получите доступ к персонализированной панели для управления курсами, отслеживания прогресса и многого другого',
     roleBasedAccess: 'Доступ по ролям',
-    selectRoleAccess: 'Выберите свою роль для доступа к соответствующей панели и инструментам'
+    selectRoleAccess: 'Выберите свою роль для доступа к соответствующей панели и инструментам',
+    
   }
 };
 
