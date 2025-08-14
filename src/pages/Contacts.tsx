@@ -51,7 +51,7 @@ const Contacts = () => {
               {t('contacts')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Get in touch with our team. We're here to help you succeed in your trading journey.
+              {t('contactDescription')}
             </p>
           </div>
 
@@ -59,9 +59,9 @@ const Contacts = () => {
             {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Send us a message</CardTitle>
+                <CardTitle className="text-2xl">{t('sendMessageTitle')}</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  {t('sendMessageDescription')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -104,9 +104,9 @@ const Contacts = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+                <h2 className="text-3xl font-bold mb-6">{t('getInTouchTitle')}</h2>
                 <p className="text-muted-foreground text-lg">
-                  Whether you have questions about our courses, need technical support, or want to discuss partnership opportunities, our team is ready to assist you.
+                  {t('getInTouchDescription')}
                 </p>
               </div>
 
@@ -132,23 +132,23 @@ const Contacts = () => {
               {/* Map or Additional Info */}
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Why Choose Us?</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('whyChooseUsTitle')}</h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Experienced team of trading professionals</span>
+                      <span>{t('experiencedTeam')}</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Proven track record of student success</span>
+                      <span>{t('provenTrackRecord')}</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Comprehensive support and mentorship</span>
+                      <span>{t('comprehensiveSupport')}</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>Cutting-edge trading tools and resources</span>
+                      <span>{t('cuttingEdgeTools')}</span>
                     </div>
                   </div>
                 </CardContent>

@@ -16,7 +16,7 @@ const Prices = () => {
       name: t('basic'),
       price: '$99',
       period: t('month'),
-      description: 'Perfect for beginners starting their trading journey',
+      description: t('basicDescription'),
       features: [
         'Basic trading fundamentals',
         'Market analysis tools',
@@ -31,7 +31,7 @@ const Prices = () => {
       name: t('professional'),
       price: '$299',
       period: t('month'),
-      description: 'Advanced features for serious traders',
+      description: t('professionalDescription'),
       features: [
         'Everything in Basic',
         'Advanced strategies',
@@ -48,7 +48,7 @@ const Prices = () => {
       name: t('enterprise'),
       price: '$599',
       period: t('month'),
-      description: 'Complete solution for professional traders',
+      description: t('enterpriseDescription'),
       features: [
         'Everything in Professional',
         'Custom trading algorithms',
@@ -75,7 +75,7 @@ const Prices = () => {
               {t('pricing')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Choose the perfect plan to accelerate your trading success. All plans include our comprehensive learning platform and community access.
+              {t('pricingDescription')}
             </p>
           </div>
 
@@ -117,23 +117,23 @@ const Prices = () => {
 
           {/* FAQ Section */}
           <div className="bg-secondary rounded-lg p-8">
-            <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">{t('faqSectionTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-semibold mb-2">Can I change plans anytime?</h3>
-                <p className="text-muted-foreground">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+                <h3 className="text-lg font-semibold mb-2">{t('canChangeQuestion')}</h3>
+                <p className="text-muted-foreground">{t('canChangeAnswer')}</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">Is there a free trial?</h3>
-                <p className="text-muted-foreground">We offer a 7-day free trial for all new users to explore our platform.</p>
+                <h3 className="text-lg font-semibold mb-2">{t('freeTrialQuestion')}</h3>
+                <p className="text-muted-foreground">{t('freeTrialAnswer')}</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">What payment methods do you accept?</h3>
-                <p className="text-muted-foreground">We accept all major credit cards, PayPal, and cryptocurrency payments.</p>
+                <h3 className="text-lg font-semibold mb-2">{t('paymentMethodsQuestion')}</h3>
+                <p className="text-muted-foreground">{t('paymentMethodsAnswer')}</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-2">Do you offer refunds?</h3>
-                <p className="text-muted-foreground">Yes, we offer a 30-day money-back guarantee if you're not satisfied.</p>
+                <h3 className="text-lg font-semibold mb-2">{t('refundsQuestion')}</h3>
+                <p className="text-muted-foreground">{t('refundsAnswer')}</p>
               </div>
             </div>
           </div>

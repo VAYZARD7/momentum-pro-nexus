@@ -430,7 +430,79 @@ export const translations = {
     activeCommunityDesc: 'Join a supportive community of like-minded traders sharing insights, strategies, and celebrating successes together.',
     readyToStart: 'Ready to Start Your Trading Journey?',
     joinThousands: 'Join thousands of successful traders who have mastered the markets with our proven methods',
-    learnMoreAboutUs: 'Learn More About Us'
+    learnMoreAboutUs: 'Learn More About Us',
+    
+    // About page content
+    ourMissionTitle: 'Our Mission',
+    ourVisionTitle: 'Our Vision', 
+    ourValuesTitle: 'Our Values',
+    experienceTitle: 'Experience',
+    missionText: 'To democratize trading education and empower individuals with the knowledge and skills needed to succeed in financial markets.',
+    visionText: 'To become the world\'s leading platform for comprehensive trading education, creating a community of successful traders.',
+    valuesText: 'Excellence, integrity, innovation, and commitment to student success drive everything we do.',
+    experienceText: 'Over 10 years of combined experience from our team of professional traders and educators.',
+    
+    // Prices page content  
+    pricingDescription: 'Choose the perfect plan to accelerate your trading success. All plans include our comprehensive learning platform and community access.',
+    basicDescription: 'Perfect for beginners starting their trading journey',
+    professionalDescription: 'Advanced features for serious traders',
+    enterpriseDescription: 'Complete solution for professional traders',
+    faqSectionTitle: 'Frequently Asked Questions',
+    canChangeQuestion: 'Can I change plans anytime?',
+    canChangeAnswer: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.',
+    freeTrialQuestion: 'Is there a free trial?',
+    freeTrialAnswer: 'We offer a 7-day free trial for all new users to explore our platform.',
+    paymentMethodsQuestion: 'What payment methods do you accept?',
+    paymentMethodsAnswer: 'We accept all major credit cards, PayPal, and cryptocurrency payments.',
+    refundsQuestion: 'Do you offer refunds?',
+    refundsAnswer: 'Yes, we offer a 30-day money-back guarantee if you\'re not satisfied.',
+    
+    // Contact page content
+    contactDescription: 'Get in touch with our team. We\'re here to help you succeed in your trading journey.',
+    sendMessageTitle: 'Send us a message',
+    sendMessageDescription: 'Fill out the form below and we\'ll get back to you as soon as possible.',
+    getInTouchTitle: 'Get in Touch',
+    getInTouchDescription: 'Whether you have questions about our courses, need technical support, or want to discuss partnership opportunities, our team is ready to assist you.',
+    whyChooseUsTitle: 'Why Choose Us?',
+    experiencedTeam: 'Experienced team of trading professionals',
+    provenTrackRecord: 'Proven track record of student success',
+    comprehensiveSupport: 'Comprehensive support and mentorship',
+    cuttingEdgeTools: 'Cutting-edge trading tools and resources',
+    
+    // Courses page content
+    coursesTabs: 'Course Categories',
+    beginnersTab: 'Beginners',
+    middleSchoolTab: 'Middle School',
+    highSchoolTab: 'High School',
+    courseDuration: 'Duration',
+    courseCost: 'Cost',
+    enrollNow: 'Enroll Now',
+    courseOverview: 'Course Overview',
+    courseStages: 'Course Stages',
+    courseRequirements: 'Requirements',
+    courseGoals: 'Learning Goals',
+    
+    // Course details
+    basicTradingTitle: 'Basic Trading Fundamentals',
+    basicTradingDesc: 'Learn the essential concepts of trading, market analysis, and risk management.',
+    riskManagementTitle: 'Risk Management Essentials', 
+    riskManagementCourseDesc: 'Master the art of protecting your capital while maximizing returns.',
+    technicalAnalysisTitle: 'Technical Analysis Mastery',
+    technicalAnalysisDesc: 'Deep dive into chart patterns, indicators, and trading signals.',
+    
+    portfolioManagementTitle: 'Portfolio Management',
+    portfolioManagementDesc: 'Learn how to build and manage diversified trading portfolios.',
+    advancedStrategiesTitle: 'Advanced Trading Strategies',
+    advancedStrategiesDesc: 'Professional-level strategies used by institutional traders.',
+    algorithmicTradingTitle: 'Algorithmic Trading',
+    algorithmicTradingDesc: 'Introduction to automated trading systems and algorithms.',
+    
+    institutionalTradingTitle: 'Institutional Trading Methods',
+    institutionalTradingDesc: 'Learn how professional institutions approach the markets.',
+    marketMakingTitle: 'Market Making Strategies',
+    marketMakingDesc: 'Advanced techniques for providing liquidity to the markets.',
+    tradingPsychologyTitle: 'Trading Psychology Mastery',
+    tradingPsychologyDesc: 'Master the mental game of trading for consistent success.'
   },
   ru: {
     // Navigation
@@ -858,7 +930,83 @@ export const translations = {
     activeCommunityDesc: 'Присоединяйтесь к поддерживающему сообществу единомышленников-трейдеров, которые делятся идеями, стратегиями и празднуют успехи вместе.',
     readyToStart: 'Готовы начать свой торговый путь?',
     joinThousands: 'Присоединяйтесь к тысячам успешных трейдеров, которые освоили рынки с помощью наших проверенных методов',
-    learnMoreAboutUs: 'Узнать больше о нас'
+    learnMoreAboutUs: 'Узнать больше о нас',
+    
+    // About page content
+    ourMissionTitle: 'Наша миссия',
+    ourVisionTitle: 'Наше видение',
+    ourValuesTitle: 'Наши ценности', 
+    experienceTitle: 'Опыт',
+    missionText: 'Демократизировать торговое образование и дать людям знания и навыки, необходимые для успеха на финансовых рынках.',
+    visionText: 'Стать ведущей мировой платформой для комплексного торгового образования, создавая сообщество успешных трейдеров.',
+    valuesText: 'Превосходство, честность, инновации и приверженность успеху студентов движут всем, что мы делаем.',
+    experienceText: 'Более 10 лет совместного опыта от нашей команды профессиональных трейдеров и преподавателей.',
+    
+    // Prices page content  
+    pricingDescription: 'Выберите идеальный план для ускорения вашего торгового успеха. Все планы включают нашу комплексную обучающую платформу и доступ к сообществу.',
+    basicDescription: 'Идеально для начинающих, начинающих свой торговый путь',
+    professionalDescription: 'Расширенные функции для серьезных трейдеров',
+    enterpriseDescription: 'Полное решение для профессиональных трейдеров',
+    faqSectionTitle: 'Часто задаваемые вопросы',
+    canChangeQuestion: 'Могу ли я изменить план в любое время?',
+    canChangeAnswer: 'Да, вы можете повысить или понизить свой план в любое время. Изменения вступают в силу немедленно.',
+    freeTrialQuestion: 'Есть ли бесплатная пробная версия?',
+    freeTrialAnswer: 'Мы предлагаем 7-дневную бесплатную пробную версию для всех новых пользователей для изучения нашей платформы.',
+    paymentMethodsQuestion: 'Какие способы оплаты вы принимаете?',
+    paymentMethodsAnswer: 'Мы принимаем все основные кредитные карты, PayPal и платежи в криптовалюте.',
+    refundsQuestion: 'Предлагаете ли вы возврат средств?',
+    refundsAnswer: 'Да, мы предлагаем 30-дневную гарантию возврата денег, если вы не удовлетворены.',
+    
+    // Contact page content
+    contactDescription: 'Свяжитесь с нашей командой. Мы здесь, чтобы помочь вам добиться успеха в вашем торговом пути.',
+    sendMessageTitle: 'Отправьте нам сообщение',
+    sendMessageDescription: 'Заполните форму ниже, и мы свяжемся с вами как можно скорее.',
+    getInTouchTitle: 'Связаться',
+    getInTouchDescription: 'Есть ли у вас вопросы о наших курсах, нужна техническая поддержка или хотите обсудить возможности партнерства - наша команда готова помочь.',
+    whyChooseUsTitle: 'Почему выбирают нас?',
+    experiencedTeam: 'Опытная команда торговых профессионалов',
+    provenTrackRecord: 'Проверенная история успеха студентов',
+    comprehensiveSupport: 'Комплексная поддержка и наставничество',
+    cuttingEdgeTools: 'Передовые торговые инструменты и ресурсы',
+    
+    // Courses page content
+    coursesTabs: 'Категории курсов',
+    beginnersTab: 'Начинающие',
+    middleSchoolTab: 'Средняя школа',
+    highSchoolTab: 'Старшая школа',
+    courseDuration: 'Продолжительность',
+    courseCost: 'Стоимость',
+    enrollNow: 'Записаться сейчас',
+    courseOverview: 'Обзор курса',
+    courseStages: 'Этапы курса',
+    courseRequirements: 'Требования',
+    courseGoals: 'Цели обучения',
+    
+    // Course details
+    basicTradingTitle: 'Основы торговли',
+    basicTradingDesc: 'Изучите основные концепции торговли, анализа рынка и управления рисками.',
+    riskManagementTitle: 'Основы управления рисками',
+    riskManagementCourseDesc: 'Освойте искусство защиты капитала при максимизации доходности.',
+    technicalAnalysisTitle: 'Мастерство технического анализа',
+    technicalAnalysisDesc: 'Глубокое погружение в графические паттерны, индикаторы и торговые сигналы.',
+    
+    portfolioManagementTitle: 'Управление портфелем',
+    portfolioManagementDesc: 'Научитесь создавать и управлять диверсифицированными торговыми портфелями.',
+    advancedStrategiesTitle: 'Продвинутые торговые стратегии',
+    advancedStrategiesDesc: 'Стратегии профессионального уровня, используемые институциональными трейдерами.',
+    algorithmicTradingTitle: 'Алгоритмическая торговля',
+    algorithmicTradingDesc: 'Введение в автоматизированные торговые системы и алгоритмы.',
+    
+    institutionalTradingTitle: 'Методы институциональной торговли',
+    institutionalTradingDesc: 'Узнайте, как профессиональные институты подходят к рынкам.',
+    marketMakingTitle: 'Стратегии маркет-мейкинга',
+    marketMakingDesc: 'Продвинутые техники для обеспечения ликвидности рынков.',
+    tradingPsychologyTitle: 'Мастерство торговой психологии',
+    tradingPsychologyDesc: 'Освойте ментальную игру торговли для постоянного успеха.',
+    
+    pricing: 'Цены',
+    professional: 'Профессиональный',
+    enterprise: 'Корпоративный'
   }
 };
 
