@@ -29,10 +29,10 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: '10,000+', label: 'Students Trained' },
-    { number: '95%', label: 'Success Rate' },
-    { number: '50+', label: 'Expert Instructors' },
-    { number: '24/7', label: 'Support Available' }
+    { number: '10,000+', label: t('studentsTrainedLabel') },
+    { number: '95%', label: t('successRateLabel') },
+    { number: '50+', label: t('expertInstructorsLabel') },
+    { number: '24/7', label: t('supportAvailableLabel') }
   ];
 
   const dashboards = [
@@ -125,7 +125,7 @@ const Index = () => {
               {t('features')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover why thousands of traders choose Momentum Trading Pro for their education
+              {t('discoverFeatures')}
             </p>
           </div>
 
@@ -191,49 +191,49 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">
-              Why Thousands Choose Momentum Trading Pro
+              {t('whyChooseUs')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Shield className="h-6 w-6 text-primary" />
-                  Risk Management Focus
+                  {t('riskManagementFocus')}
                 </h3>
                 <p className="text-muted-foreground">
-                  Learn proven risk management strategies that protect your capital while maximizing returns. Our approach has helped thousands of traders avoid common pitfalls.
+                  {t('riskManagementDesc')}
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <UserCheck className="h-6 w-6 text-primary" />
-                  Personal Mentorship
+                  {t('personalMentorship')}
                 </h3>
                 <p className="text-muted-foreground">
-                  Get paired with experienced traders who provide personalized guidance, review your trades, and help accelerate your learning curve.
+                  {t('personalMentorshipDesc')}
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  Comprehensive Curriculum
+                  {t('comprehensiveCurriculum')}
                 </h3>
                 <p className="text-muted-foreground">
-                  From beginner fundamentals to advanced institutional strategies, our structured learning path adapts to your experience level and goals.
+                  {t('comprehensiveCurriculumDesc')}
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Users className="h-6 w-6 text-primary" />
-                  Active Community
+                  {t('activeCommunity')}
                 </h3>
                 <p className="text-muted-foreground">
-                  Join a supportive community of like-minded traders sharing insights, strategies, and celebrating successes together.
+                  {t('activeCommunityDesc')}
                 </p>
               </div>
             </div>
             <Link to="/about">
               <Button variant="outline" size="lg">
-                Learn More About Us
+                {t('learnMoreAboutUs')}
               </Button>
             </Link>
           </div>
@@ -244,10 +244,10 @@ const Index = () => {
       <section className="py-20 bg-gradient-trading">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Trading Journey?
+            {t('readyToStart')}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of successful traders who have mastered the markets with our proven methods
+            {t('joinThousands')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">

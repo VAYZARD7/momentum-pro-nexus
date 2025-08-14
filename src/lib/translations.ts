@@ -411,7 +411,26 @@ export const translations = {
     accessDashboard: 'Access Dashboard',
     dashboardDescription: 'Access your personalized dashboard to manage courses, track progress, and more',
     roleBasedAccess: 'Role-Based Access',
-    selectRoleAccess: 'Select your role to access the appropriate dashboard and tools'
+    selectRoleAccess: 'Select your role to access the appropriate dashboard and tools',
+    
+    // Home page content
+    studentsTrainedLabel: 'Students Trained',
+    successRateLabel: 'Success Rate',
+    expertInstructorsLabel: 'Expert Instructors',
+    supportAvailableLabel: 'Support Available',
+    whyChooseUs: 'Why Thousands Choose Momentum Trading Pro',
+    discoverFeatures: 'Discover why thousands of traders choose Momentum Trading Pro for their education',
+    riskManagementFocus: 'Risk Management Focus',
+    riskManagementDesc: 'Learn proven risk management strategies that protect your capital while maximizing returns. Our approach has helped thousands of traders avoid common pitfalls.',
+    personalMentorship: 'Personal Mentorship',
+    personalMentorshipDesc: 'Get paired with experienced traders who provide personalized guidance, review your trades, and help accelerate your learning curve.',
+    comprehensiveCurriculum: 'Comprehensive Curriculum',
+    comprehensiveCurriculumDesc: 'From beginner fundamentals to advanced institutional strategies, our structured learning path adapts to your experience level and goals.',
+    activeCommunity: 'Active Community',
+    activeCommunityDesc: 'Join a supportive community of like-minded traders sharing insights, strategies, and celebrating successes together.',
+    readyToStart: 'Ready to Start Your Trading Journey?',
+    joinThousands: 'Join thousands of successful traders who have mastered the markets with our proven methods',
+    learnMoreAboutUs: 'Learn More About Us'
   },
   ru: {
     // Navigation
@@ -822,6 +841,24 @@ export const translations = {
     roleBasedAccess: 'Доступ по ролям',
     selectRoleAccess: 'Выберите свою роль для доступа к соответствующей панели и инструментам',
     
+    // Home page content
+    studentsTrainedLabel: 'Обученных студентов',
+    successRateLabel: 'Успешность',
+    expertInstructorsLabel: 'Экспертов-инструкторов',
+    supportAvailableLabel: 'Поддержка доступна',
+    whyChooseUs: 'Почему тысячи выбирают Momentum Trading Pro',
+    discoverFeatures: 'Узнайте, почему тысячи трейдеров выбирают Momentum Trading Pro для своего образования',
+    riskManagementFocus: 'Фокус на управление рисками',
+    riskManagementDesc: 'Изучите проверенные стратегии управления рисками, которые защищают ваш капитал и максимизируют доходность. Наш подход помог тысячам трейдеров избежать распространенных ошибок.',
+    personalMentorship: 'Персональное наставничество',
+    personalMentorshipDesc: 'Получите наставника из числа опытных трейдеров, который предоставит персональные рекомендации, проанализирует ваши сделки и поможет ускорить процесс обучения.',
+    comprehensiveCurriculum: 'Комплексная программа',
+    comprehensiveCurriculumDesc: 'От основ для начинающих до продвинутых институциональных стратегий - наш структурированный путь обучения адаптируется к вашему уровню опыта и целям.',
+    activeCommunity: 'Активное сообщество',
+    activeCommunityDesc: 'Присоединяйтесь к поддерживающему сообществу единомышленников-трейдеров, которые делятся идеями, стратегиями и празднуют успехи вместе.',
+    readyToStart: 'Готовы начать свой торговый путь?',
+    joinThousands: 'Присоединяйтесь к тысячам успешных трейдеров, которые освоили рынки с помощью наших проверенных методов',
+    learnMoreAboutUs: 'Узнать больше о нас'
   }
 };
 
