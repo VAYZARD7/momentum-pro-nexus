@@ -7,6 +7,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Clock, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import basicTradingImage from '@/assets/course-basic-trading.jpg';
+import riskManagementImage from '@/assets/course-risk-management.jpg';
+import technicalAnalysisImage from '@/assets/course-technical-analysis.jpg';
+import portfolioManagementImage from '@/assets/course-portfolio-management.jpg';
+import advancedStrategiesImage from '@/assets/course-advanced-strategies.jpg';
+import algorithmicTradingImage from '@/assets/course-algorithmic-trading.jpg';
+import institutionalTradingImage from '@/assets/course-institutional-trading.jpg';
+import marketMakingImage from '@/assets/course-market-making.jpg';
+import tradingPsychologyImage from '@/assets/course-trading-psychology.jpg';
 
 const Courses = () => {
   const { t } = useLanguage();
@@ -19,7 +28,7 @@ const Courses = () => {
         description: t('basicTradingDesc'),
         duration: '4 weeks',
         price: '$199',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: basicTradingImage
       },
       {
         id: 'risk-management',
@@ -27,7 +36,7 @@ const Courses = () => {
         description: t('riskManagementCourseDesc'),
         duration: '3 weeks',
         price: '$149',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: riskManagementImage
       },
       {
         id: 'technical-analysis',
@@ -35,7 +44,7 @@ const Courses = () => {
         description: t('technicalAnalysisDesc'),
         duration: '6 weeks',
         price: '$299',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: technicalAnalysisImage
       }
     ],
     middle: [
@@ -45,7 +54,7 @@ const Courses = () => {
         description: t('portfolioManagementDesc'),
         duration: '5 weeks',
         price: '$399',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: portfolioManagementImage
       },
       {
         id: 'advanced-strategies',
@@ -53,7 +62,7 @@ const Courses = () => {
         description: t('advancedStrategiesDesc'),
         duration: '8 weeks',
         price: '$599',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: advancedStrategiesImage
       },
       {
         id: 'algorithmic-trading',
@@ -61,7 +70,7 @@ const Courses = () => {
         description: t('algorithmicTradingDesc'),
         duration: '10 weeks',
         price: '$799',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: algorithmicTradingImage
       }
     ],
     high: [
@@ -71,7 +80,7 @@ const Courses = () => {
         description: t('institutionalTradingDesc'),
         duration: '12 weeks',
         price: '$1299',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: institutionalTradingImage
       },
       {
         id: 'market-making',
@@ -79,7 +88,7 @@ const Courses = () => {
         description: t('marketMakingDesc'),
         duration: '8 weeks',
         price: '$999',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: marketMakingImage
       },
       {
         id: 'trading-psychology',
@@ -87,7 +96,7 @@ const Courses = () => {
         description: t('tradingPsychologyDesc'),
         duration: '6 weeks',
         price: '$699',
-        image: '/public/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png'
+        image: tradingPsychologyImage
       }
     ]
   };
