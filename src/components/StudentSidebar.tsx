@@ -29,8 +29,10 @@ const navigationItems = [
   { title: 'Dashboard', url: '/student-dashboard', icon: Home, key: 'dashboard' },
   { title: 'My Courses', url: '/student-dashboard/courses', icon: BookOpen, key: 'courses' },
   { title: 'Homework', url: '/student-dashboard/homework', icon: FileText, key: 'homework' },
+  { title: 'Grades', url: '/student-dashboard/grades', icon: Award, key: 'grades' },
   { title: 'Schedule', url: '/student-dashboard/schedule', icon: Calendar, key: 'schedule' },
   { title: 'Certificates', url: '/student-dashboard/certificates', icon: Award, key: 'certificates' },
+  { title: 'Messages', url: '/student-dashboard/messages', icon: Bell, key: 'messages' },
   { title: 'Applications', url: '/student-dashboard/applications', icon: ClipboardList, key: 'applications' },
 ];
 
