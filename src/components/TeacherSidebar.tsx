@@ -93,7 +93,7 @@ export function TeacherSidebar() {
   return (
     <Sidebar className={sidebar.state === 'collapsed' ? 'w-14' : 'w-60'} collapsible="icon">
       <SidebarContent>
-        <SidebarGroup defaultOpen={isExpanded}>
+        <SidebarGroup>
           <SidebarGroupLabel>Teacher Portal</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
