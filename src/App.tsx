@@ -29,6 +29,7 @@ import SecuritySettings from "./pages/SecuritySettings";
 import SystemMonitoring from "./pages/SystemMonitoring";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
 import Reports from "./pages/Reports";
+import StudentHome from "./pages/student/StudentHome";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/student-dashboard/*" element={<StudentHome />} />
               <Route path="/dashboard/student" element={<StudentDashboard />} />
               <Route path="/dashboard/teacher" element={<TeacherDashboard />} />
               <Route path="/dashboard/curator" element={<CuratorDashboard />} />
