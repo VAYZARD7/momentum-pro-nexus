@@ -14,6 +14,7 @@ import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 
 import CuratorHome from "./pages/curator/CuratorHome";
+import AdminHome from "./pages/admin/AdminHome";
 import AdminDashboard from "./pages/AdminDashboard";
 import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
@@ -53,6 +54,7 @@ const App = () => (
               <Route path="/student-dashboard/*" element={<StudentHome />} />
               <Route path="/teacher-dashboard/*" element={<TeacherHome />} />
               <Route path="/curator-dashboard/*" element={<CuratorHome />} />
+              <Route path="/admin-dashboard/*" element={<AdminHome />} />
               <Route path="/dashboard/admin" element={<AdminDashboard />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/user-management" element={<UserManagement />} />

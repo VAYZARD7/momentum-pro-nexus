@@ -37,25 +37,32 @@ const Index = () => {
 
   const dashboards = [
     {
-      icon: Users,
-      title: t('teacherDashboard'),
+      icon: BookOpen,
+      title: 'Student Dashboard',
       description: t('dashboardDescription'),
-      path: '/dashboard/teacher',
+      path: '/student-dashboard',
       variant: 'default' as const
     },
     {
-      icon: Settings,
-      title: t('adminDashboard'),
+      icon: Users,
+      title: t('teacherDashboard'),
       description: t('dashboardDescription'),
-      path: '/dashboard/admin',
+      path: '/teacher-dashboard',
       variant: 'secondary' as const
     },
     {
       icon: BarChart3,
       title: t('curatorDashboard'),
-      description: t('dashboardDescription'),
-      path: '/dashboard/curator',
+      description: 'Teacher assistant dashboard for group management',
+      path: '/curator-dashboard',
       variant: 'outline' as const
+    },
+    {
+      icon: Settings,
+      title: t('adminDashboard'),
+      description: t('dashboardDescription'),
+      path: '/admin-dashboard',
+      variant: 'destructive' as const
     }
   ];
 
@@ -161,7 +168,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {dashboards.map((dashboard, index) => (
               <Card key={index} className="text-center hover:shadow-trading transition-all duration-300 hover:scale-105 group">
                 <CardHeader>
