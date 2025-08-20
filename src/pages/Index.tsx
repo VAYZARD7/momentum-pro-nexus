@@ -4,7 +4,8 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3 } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -152,6 +153,159 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Course Preview Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Featured Courses
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Master trading with our comprehensive curriculum designed by industry experts
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              { title: "Basic Trading Fundamentals", level: "Beginner", duration: "4 weeks", students: "2,500+", rating: 4.9 },
+              { title: "Advanced Technical Analysis", level: "Advanced", duration: "8 weeks", students: "1,200+", rating: 4.8 },
+              { title: "Risk Management Mastery", level: "Intermediate", duration: "6 weeks", students: "1,800+", rating: 4.9 }
+            ].map((course, index) => (
+              <Card key={index} className="hover:shadow-trading transition-all duration-300 hover:scale-105">
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <Badge variant="secondary">{course.level}</Badge>
+                    <div className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                      <span className="text-sm font-medium">{course.rating}</span>
+                    </div>
+                  </div>
+                  <CardTitle className="text-lg">{course.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Duration:</span>
+                      <span className="font-medium">{course.duration}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Students:</span>
+                      <span className="font-medium">{course.students}</span>
+                    </div>
+                  </div>
+                  <Link to="/courses">
+                    <Button className="w-full">View Course</Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/courses">
+              <Button variant="outline" size="lg">
+                View All Courses
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              What Our Students Say
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Real success stories from traders who transformed their careers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Chen",
+                role: "Professional Trader",
+                content: "The risk management course completely changed how I approach trading. My win rate improved by 40% in just 3 months.",
+                rating: 5
+              },
+              {
+                name: "Michael Rodriguez",
+                role: "Portfolio Manager",
+                content: "Outstanding curriculum and mentorship. The real-world applications made all the difference in my trading career.",
+                rating: 5
+              },
+              {
+                name: "Emma Thompson",
+                role: "Day Trader",
+                content: "From complete beginner to profitable trader in 6 months. The step-by-step approach is incredibly effective.",
+                rating: 5
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-trading transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                    ))}
+                  </div>
+                  <CardDescription className="text-base italic">
+                    "{testimonial.content}"
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Learning Path Section */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Your Learning Journey
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Follow our structured path from beginner to professional trader
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              {[
+                { step: 1, title: "Foundation", description: "Master the basics of trading, market analysis, and financial instruments", duration: "4-6 weeks" },
+                { step: 2, title: "Technical Analysis", description: "Learn chart patterns, indicators, and advanced analysis techniques", duration: "6-8 weeks" },
+                { step: 3, title: "Risk Management", description: "Develop strategies to protect capital and manage trading psychology", duration: "4-6 weeks" },
+                { step: 4, title: "Advanced Strategies", description: "Implement professional trading strategies and portfolio management", duration: "8-12 weeks" },
+                { step: 5, title: "Live Trading", description: "Apply your skills with real market conditions and mentorship", duration: "Ongoing" }
+              ].map((phase, index) => (
+                <div key={index} className="flex items-center gap-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-trading rounded-full flex items-center justify-center text-white font-bold">
+                    {phase.step}
+                  </div>
+                  <div className="flex-1 bg-background rounded-lg p-6 shadow-sm">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-semibold">{phase.title}</h3>
+                      <Badge variant="outline">{phase.duration}</Badge>
+                    </div>
+                    <p className="text-muted-foreground">{phase.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

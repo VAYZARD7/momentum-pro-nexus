@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
+import { Button } from '@/components/ui/button';
 import { Users, DollarSign, Activity, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -23,11 +24,29 @@ const Dashboard = () => {
   ];
 
   const recentActivities = [
-    { type: 'user_registration', message: 'New user registered: john.doe@example.com', time: '2 minutes ago' },
-    { type: 'system_update', message: 'System backup completed successfully', time: '15 minutes ago' },
-    { type: 'security_alert', message: 'Failed login attempts detected', time: '1 hour ago' },
-    { type: 'course_creation', message: 'New course created: Advanced Trading Strategies', time: '2 hours ago' },
+    { type: 'user_registration', message: 'New user registered: john.doe@example.com', time: '2 minutes ago', severity: 'info' },
+    { type: 'system_update', message: 'System backup completed successfully', time: '15 minutes ago', severity: 'success' },
+    { type: 'security_alert', message: 'Failed login attempts detected', time: '1 hour ago', severity: 'warning' },
+    { type: 'course_creation', message: 'New course created: Advanced Trading Strategies', time: '2 hours ago', severity: 'info' },
+    { type: 'payment_processed', message: 'Bulk payment processing completed: $45,230', time: '3 hours ago', severity: 'success' },
+    { type: 'maintenance', message: 'Scheduled maintenance: Database optimization', time: '4 hours ago', severity: 'info' },
   ];
+
+  const platformOverview = [
+    { category: 'Students', active: 8945, growth: '+12%', total: 12847 },
+    { category: 'Teachers', active: 156, growth: '+5%', total: 187 },
+    { category: 'Curators', active: 23, growth: '+15%', total: 28 },
+    { category: 'Courses', active: 47, growth: '+8%', total: 52 },
+  ];
+
+  const getSeverityColor = (severity: string) => {
+    switch (severity) {
+      case 'success': return 'text-green-600';
+      case 'warning': return 'text-yellow-600';
+      case 'error': return 'text-red-600';
+      default: return 'text-blue-600';
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -57,7 +76,31 @@ const Dashboard = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        {/* Platform Overview */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Platform Overview</CardTitle>
+            <CardDescription>Active users and content across all categories</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {platformOverview.map((item) => (
+              <div key={item.category} className="flex items-center justify-between p-3 border rounded-lg">
+                <div>
+                  <h4 className="font-medium">{item.category}</h4>
+                  <p className="text-sm text-muted-foreground">
+                    {item.active} active of {item.total} total
+                  </p>
+                </div>
+                <div className="text-right">
+                  <div className="text-lg font-bold">{item.active}</div>
+                  <div className="text-sm text-green-600">{item.growth}</div>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
         {/* System Status */}
         <Card>
           <CardHeader>
@@ -85,7 +128,9 @@ const Dashboard = () => {
             ))}
           </CardContent>
         </Card>
+      </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Activities */}
         <Card>
           <CardHeader>
@@ -95,13 +140,46 @@ const Dashboard = () => {
           <CardContent className="space-y-4">
             {recentActivities.map((activity, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                <div className={`w-2 h-2 rounded-full mt-2 ${getSeverityColor(activity.severity)}`}></div>
                 <div className="flex-1">
                   <p className="text-sm font-medium">{activity.message}</p>
                   <p className="text-xs text-muted-foreground">{activity.time}</p>
                 </div>
+                <Badge variant="outline" className="text-xs">
+                  {activity.type.replace('_', ' ')}
+                </Badge>
               </div>
             ))}
+          </CardContent>
+        </Card>
+
+        {/* Quick Actions */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Quick Actions</CardTitle>
+            <CardDescription>Common administrative tasks</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <Button className="w-full justify-start" variant="outline">
+              <Users className="mr-2 h-4 w-4" />
+              Manage User Permissions
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <Activity className="mr-2 h-4 w-4" />
+              System Health Check
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4" />
+              Generate Revenue Report
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <AlertTriangle className="mr-2 h-4 w-4" />
+              Review Security Alerts
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <TrendingUp className="mr-2 h-4 w-4" />
+              Platform Analytics
+            </Button>
           </CardContent>
         </Card>
       </div>

@@ -19,9 +19,16 @@ const Dashboard = () => {
   };
 
   const mockApplications = [
-    { id: 1, applicant: 'John Doe', course: 'Advanced Trading', status: 'pending', date: '2024-01-15' },
-    { id: 2, applicant: 'Jane Smith', course: 'Technical Analysis', status: 'approved', date: '2024-01-14' },
-    { id: 3, applicant: 'Mike Johnson', course: 'Risk Management', status: 'pending', date: '2024-01-16' }
+    { id: 1, applicant: 'John Doe', course: 'Advanced Trading', status: 'pending', date: '2024-01-15', experience: '2 years', referral: 'LinkedIn' },
+    { id: 2, applicant: 'Jane Smith', course: 'Technical Analysis', status: 'approved', date: '2024-01-14', experience: '5 years', referral: 'Google' },
+    { id: 3, applicant: 'Mike Johnson', course: 'Risk Management', status: 'pending', date: '2024-01-16', experience: 'Beginner', referral: 'Friend' },
+    { id: 4, applicant: 'Sarah Wilson', course: 'Portfolio Management', status: 'under_review', date: '2024-01-17', experience: '3 years', referral: 'Website' },
+  ];
+
+  const groupActivities = [
+    { id: 1, group: 'Advanced Traders', activity: 'Weekly discussion completed', members: 15, engagement: 92 },
+    { id: 2, group: 'Risk Management', activity: 'Assignment submissions reviewed', members: 22, engagement: 88 },
+    { id: 3, group: 'Technical Analysis', activity: 'New member orientation scheduled', members: 18, engagement: 85 },
   ];
 
   const mockReports = [
@@ -85,6 +92,81 @@ const Dashboard = () => {
         </Card>
       </div>
 
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Group Management
+            </CardTitle>
+            <CardDescription>Monitor student group activities and engagement</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {groupActivities.map((group) => (
+                <div key={group.id} className="p-3 border rounded-lg">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-medium">{group.group}</h4>
+                      <p className="text-sm text-muted-foreground">{group.activity}</p>
+                    </div>
+                    <Badge variant="secondary">{group.members} members</Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Engagement: {group.engagement}%</span>
+                    <Button size="sm" variant="outline">Manage</Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Button className="w-full mt-4">
+              View All Groups
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <TrendingUp className="h-5 w-5" />
+              Weekly Analytics
+            </CardTitle>
+            <CardDescription>Performance metrics for managed groups</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="p-3 border rounded-lg">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Application Approval Rate</span>
+                  <span className="text-lg font-bold">87%</span>
+                </div>
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-primary h-2 rounded-full" style={{ width: '87%' }}></div>
+                </div>
+              </div>
+              <div className="p-3 border rounded-lg">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Average Response Time</span>
+                  <span className="text-lg font-bold">2.4h</span>
+                </div>
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-green-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                </div>
+              </div>
+              <div className="p-3 border rounded-lg">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium">Quality Score</span>
+                  <span className="text-lg font-bold">94%</span>
+                </div>
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-blue-500 h-2 rounded-full" style={{ width: '94%' }}></div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>
           <CardHeader>
@@ -97,23 +179,34 @@ const Dashboard = () => {
           <CardContent>
             <div className="space-y-4">
               {mockApplications.map((app) => (
-                <div key={app.id} className="flex items-center justify-between p-3 border rounded-lg">
-                  <div className="flex-1">
-                    <h4 className="font-medium">{app.applicant}</h4>
-                    <p className="text-sm text-muted-foreground">{app.course}</p>
-                    <p className="text-xs text-muted-foreground">{app.date}</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Badge className={getStatusColor(app.status)}>
-                      {app.status.charAt(0).toUpperCase() + app.status.slice(1)}
-                    </Badge>
-                    {app.status === 'pending' && (
-                      <div className="flex gap-2">
-                        <Button size="sm" variant="outline">Approve</Button>
-                        <Button size="sm" variant="destructive">Reject</Button>
+                <div key={app.id} className="p-3 border rounded-lg">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-medium">{app.applicant}</h4>
+                      <p className="text-sm text-muted-foreground">{app.course}</p>
+                      <div className="flex gap-2 mt-1">
+                        <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">
+                          {app.experience} exp.
+                        </span>
+                        <span className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">
+                          via {app.referral}
+                        </span>
                       </div>
-                    )}
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-muted-foreground mb-2">{app.date}</p>
+                      <Badge className={getStatusColor(app.status)}>
+                        {app.status.replace('_', ' ').charAt(0).toUpperCase() + app.status.replace('_', ' ').slice(1)}
+                      </Badge>
+                    </div>
                   </div>
+                  {app.status === 'pending' && (
+                    <div className="flex gap-2 mt-3">
+                      <Button size="sm" variant="outline">Approve</Button>
+                      <Button size="sm" variant="destructive">Reject</Button>
+                      <Button size="sm" variant="secondary">Interview</Button>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

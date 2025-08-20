@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, FileText, Award, TrendingUp, Clock, Calendar } from 'lucide-react';
+import { BookOpen, FileText, Award, TrendingUp, Clock, Calendar, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const StudentDashboard = () => {
@@ -22,7 +22,22 @@ const StudentDashboard = () => {
     { id: 1, type: 'homework', title: 'Submitted: Trading Psychology Assignment', time: '2 hours ago' },
     { id: 2, type: 'grade', title: 'Received grade: Risk Management Quiz - 92%', time: '1 day ago' },
     { id: 3, type: 'course', title: 'Completed: Advanced Trading Strategies Module 3', time: '2 days ago' },
+    { id: 4, type: 'certificate', title: 'Earned certificate: Basic Trading Fundamentals', time: '3 days ago' },
+    { id: 5, type: 'forum', title: 'Participated in discussion: Market Analysis Techniques', time: '4 days ago' },
   ];
+
+  const currentCourses = [
+    { id: 1, title: 'Advanced Technical Analysis', progress: 65, nextLesson: 'Fibonacci Retracements', instructor: 'Dr. Sarah Johnson' },
+    { id: 2, title: 'Risk Management', progress: 82, nextLesson: 'Position Sizing Strategies', instructor: 'Prof. Michael Chen' },
+    { id: 3, title: 'Trading Psychology', progress: 45, nextLesson: 'Emotional Control Techniques', instructor: 'Dr. Lisa Williams' },
+  ];
+
+  const studyGroup = {
+    name: 'Advanced Traders Group',
+    members: 12,
+    nextSession: 'Today at 3:00 PM',
+    topic: 'Market Volatility Analysis'
+  };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -87,6 +102,68 @@ const StudentDashboard = () => {
           <CardContent>
             <div className="text-2xl font-bold">88.5</div>
             <p className="text-xs text-muted-foreground mt-1">Above average</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        {/* Current Courses */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              Current Courses
+            </CardTitle>
+            <CardDescription>Your active learning progress</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {currentCourses.map((course) => (
+                <div key={course.id} className="p-4 border rounded-lg">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="font-medium">{course.title}</h4>
+                    <span className="text-sm font-medium">{course.progress}%</span>
+                  </div>
+                  <Progress value={course.progress} className="mb-2" />
+                  <p className="text-sm text-muted-foreground mb-1">Next: {course.nextLesson}</p>
+                  <p className="text-xs text-muted-foreground">Instructor: {course.instructor}</p>
+                </div>
+              ))}
+            </div>
+            <Button asChild className="w-full mt-4">
+              <Link to="/student-dashboard/courses">Continue Learning</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Study Group */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Study Group
+            </CardTitle>
+            <CardDescription>Collaborative learning with peers</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="p-4 border rounded-lg mb-4">
+              <h4 className="font-medium mb-2">{studyGroup.name}</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Members:</span>
+                  <span>{studyGroup.members} students</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Next Session:</span>
+                  <span className="font-medium">{studyGroup.nextSession}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Topic:</span>
+                  <span>{studyGroup.topic}</span>
+                </div>
+              </div>
+            </div>
+            <Button className="w-full">Join Session</Button>
           </CardContent>
         </Card>
       </div>
