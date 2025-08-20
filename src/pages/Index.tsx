@@ -347,6 +347,107 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Trading Tools & Features */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Professional Trading Tools
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Access institutional-grade tools and resources for serious traders
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              { title: "Real-Time Market Data", description: "Live price feeds, volume analysis, and market depth visualization", icon: TrendingUp },
+              { title: "Advanced Charting", description: "Professional charting tools with 100+ technical indicators", icon: BarChart3 },
+              { title: "Risk Calculator", description: "Position sizing and risk management calculators for optimal trades", icon: Shield },
+              { title: "Trading Simulator", description: "Practice with virtual money before risking real capital", icon: Target },
+              { title: "Portfolio Analytics", description: "Track performance, analyze returns, and optimize your portfolio", icon: Award },
+              { title: "Community Forum", description: "Connect with fellow traders and share market insights", icon: Users }
+            ].map((tool, index) => (
+              <Card key={index} className="hover:shadow-trading transition-all duration-300 hover:scale-105 group">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-gradient-trading rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <tool.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <CardTitle className="text-lg">{tool.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {tool.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Market Insights */}
+      <section className="py-20 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Daily Market Insights
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Stay ahead with expert market analysis and trading opportunities
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <Card className="p-6">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <TrendingUp className="h-5 w-5 text-green-500" />
+                  Today's Market Outlook
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span>S&P 500</span>
+                  <span className="text-green-500 font-medium">+1.2%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>NASDAQ</span>
+                  <span className="text-green-500 font-medium">+0.8%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>EUR/USD</span>
+                  <span className="text-red-500 font-medium">-0.3%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Bitcoin</span>
+                  <span className="text-green-500 font-medium">+2.1%</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6">
+              <CardHeader>
+                <CardTitle>Expert Analysis</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  "Markets are showing strong bullish momentum with tech stocks leading the rally. 
+                  Key support levels remain intact, suggesting continued upside potential."
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-gradient-trading rounded-full"></div>
+                  <div>
+                    <p className="font-medium">Alex Thompson</p>
+                    <p className="text-sm text-muted-foreground">Senior Market Analyst</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Additional Value Proposition */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -358,43 +459,43 @@ const Index = () => {
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Shield className="h-6 w-6 text-primary" />
-                  {t('riskManagementFocus')}
+                  Advanced Risk Management
                 </h3>
                 <p className="text-muted-foreground">
-                  {t('riskManagementDesc')}
+                  Learn professional risk management techniques used by hedge funds and institutional traders to protect your capital.
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <UserCheck className="h-6 w-6 text-primary" />
-                  {t('personalMentorship')}
+                  1-on-1 Mentorship
                 </h3>
                 <p className="text-muted-foreground">
-                  {t('personalMentorshipDesc')}
+                  Get personalized guidance from experienced traders who have managed millions in assets and understand real market conditions.
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <BookOpen className="h-6 w-6 text-primary" />
-                  {t('comprehensiveCurriculum')}
+                  Comprehensive Curriculum
                 </h3>
                 <p className="text-muted-foreground">
-                  {t('comprehensiveCurriculumDesc')}
+                  From basic concepts to advanced strategies, our curriculum covers everything you need to become a successful trader.
                 </p>
               </div>
               <div className="text-left">
                 <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                   <Users className="h-6 w-6 text-primary" />
-                  {t('activeCommunity')}
+                  Trader Community
                 </h3>
                 <p className="text-muted-foreground">
-                  {t('activeCommunityDesc')}
+                  Join a network of successful traders, share strategies, and learn from each other's experiences in our private community.
                 </p>
               </div>
             </div>
             <Link to="/about">
               <Button variant="outline" size="lg">
-                {t('learnMoreAboutUs')}
+                Learn More About Our Approach
               </Button>
             </Link>
           </div>
