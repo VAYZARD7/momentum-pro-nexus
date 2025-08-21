@@ -8,6 +8,7 @@ import Analytics from './Analytics';
 import Messages from './Messages';
 import Notifications from './Notifications';
 import Settings from './Settings';
+import CourseView from './CourseView';
 
 const CuratorRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const CuratorRoutes = () => {
       <Route path="messages" element={<Messages />} />
       <Route path="notifications" element={<Notifications />} />
       <Route path="settings" element={<Settings />} />
+      <Route path="course/:courseId" element={<CourseView />} />
     </Routes>
   );
 };

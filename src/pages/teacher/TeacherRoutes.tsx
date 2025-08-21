@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Students from './Students';
 import Courses from './Courses';
+import CourseView from './CourseView';
 import Assignments from './Assignments';
 import Grading from './Grading';
 import Schedule from './Schedule';
@@ -17,6 +18,7 @@ const TeacherRoutes = () => {
       <Route index element={<Dashboard />} />
       <Route path="students" element={<Students />} />
       <Route path="courses" element={<Courses />} />
+      <Route path="course/:courseId" element={<CourseView />} />
       <Route path="assignments" element={<Assignments />} />
       <Route path="grading" element={<Grading />} />
       <Route path="schedule" element={<Schedule />} />
