@@ -73,23 +73,29 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-hero-radial"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
+                <Badge variant="secondary" className="mr-2">New</Badge>
+                <span className="text-sm font-medium">Advanced AI Trading Signals</span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
                 {t('heroTitle')}
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 animate-slide-up">
+              <p className="text-xl text-muted-foreground mb-8 animate-slide-up leading-relaxed">
                 {t('heroSubtitle')}
               </p>
-              <div className="space-x-4 animate-slide-up">
+              <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
                 <Link to="/register">
-                  <Button variant="hero" size="xl">
+                  <Button size="lg" className="bg-gradient-trading hover:shadow-intense transition-all duration-300 transform hover:scale-105">
                     {t('heroButton')}
                   </Button>
                 </Link>
                 <Link to="/about">
-                  <Button variant="outline" size="xl">
+                  <Button variant="outline" size="lg" className="hover:bg-gradient-card hover:shadow-float transition-all duration-300">
                     {t('learnMore')}
                   </Button>
                 </Link>
@@ -97,12 +103,16 @@ const Index = () => {
             </div>
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
-                  alt="Momentum Trading Pro" 
-                  className="w-64 h-64 lg:w-80 lg:h-80 object-contain animate-pulse-glow"
-                />
-                <div className="absolute inset-0 bg-gradient-trading opacity-20 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-trading opacity-20 rounded-full blur-3xl animate-pulse-glow"></div>
+                <div className="relative z-10 p-8 rounded-full bg-gradient-card backdrop-blur-sm border border-primary/20 shadow-intense">
+                  <img 
+                    src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
+                    alt="Momentum Trading Pro" 
+                    className="w-48 h-48 lg:w-64 lg:h-64 object-contain animate-float"
+                  />
+                </div>
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-profit rounded-full opacity-60 blur-xl animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-trading rounded-full opacity-40 blur-2xl animate-pulse delay-1000"></div>
               </div>
             </div>
           </div>
@@ -110,15 +120,18 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
-                  {stat.number}
+              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="bg-gradient-card rounded-2xl p-6 shadow-card hover:shadow-float transition-all duration-300 border border-primary/10 hover:border-primary/20">
+                  <div className="text-3xl lg:text-4xl font-bold bg-gradient-trading bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+                    {stat.number}
+                  </div>
+                  <div className="text-muted-foreground font-medium">{stat.label}</div>
                 </div>
-                <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -139,18 +152,20 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-trading transition-all duration-300 hover:scale-105 group">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-gradient-trading rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <Card key={index} className="text-center hover:shadow-intense transition-all duration-500 hover:scale-105 group bg-gradient-card border-primary/10 hover:border-primary/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-border opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <CardHeader className="relative z-10">
+                  <div className="mx-auto w-16 h-16 bg-gradient-trading rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-glow transition-all duration-300 shadow-float">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{feature.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
+                <CardContent className="relative z-10">
+                  <CardDescription className="text-base leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-trading transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
               </Card>
             ))}
           </div>
