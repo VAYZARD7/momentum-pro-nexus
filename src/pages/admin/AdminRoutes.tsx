@@ -12,15 +12,14 @@ import Settings from './Settings';
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/users" element={<UserManagement />} />
-      <Route path="/system" element={<SystemSettings />} />
-      <Route path="/analytics" element={<Analytics />} />
-      <Route path="/reports" element={<Reports />} />
-      <Route path="/security" element={<Security />} />
-      <Route path="/monitoring" element={<Monitoring />} />
-      <Route path="/settings" element={<Settings />} />
+      <Route index element={<Dashboard />} />
+      <Route path="users" element={<UserManagement />} />
+      <Route path="system" element={<SystemSettings />} />
+      <Route path="analytics" element={<Analytics />} />
+      <Route path="reports" element={<Reports />} />
+      <Route path="security" element={<Security />} />
+      <Route path="monitoring" element={<Monitoring />} />
+      <Route path="settings" element={<Settings />} />
     </Routes>
   );
 };
