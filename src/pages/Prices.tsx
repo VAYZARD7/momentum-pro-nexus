@@ -115,26 +115,23 @@ const Prices = () => {
             ))}
           </div>
 
-          {/* FAQ Section */}
-          <div className="bg-secondary rounded-lg p-8">
-            <h2 className="text-3xl font-bold text-center mb-8">{t('faqSectionTitle')}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">{t('canChangeQuestion')}</h3>
-                <p className="text-muted-foreground">{t('canChangeAnswer')}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">{t('freeTrialQuestion')}</h3>
-                <p className="text-muted-foreground">{t('freeTrialAnswer')}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">{t('paymentMethodsQuestion')}</h3>
-                <p className="text-muted-foreground">{t('paymentMethodsAnswer')}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">{t('refundsQuestion')}</h3>
-                <p className="text-muted-foreground">{t('refundsAnswer')}</p>
-              </div>
+          {/* CTA Section */}
+          <div className="bg-gradient-primary rounded-lg p-8 text-center text-white">
+            <h2 className="text-3xl font-bold mb-4">Ready to Start Trading?</h2>
+            <p className="text-xl mb-6 text-white/90">
+              Join thousands of successful traders who have transformed their financial future
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/register">
+                <Button variant="secondary" size="lg">
+                  Start Free Trial
+                </Button>
+              </Link>
+              <Link to="/faq">
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                  View FAQ
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

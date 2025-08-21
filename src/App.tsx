@@ -42,6 +42,7 @@ const App = () => (
               <Route path="/course/:courseId" element={<CourseDetail />} />
               <Route path="/prices" element={<Prices />} />
               <Route path="/contacts" element={<Contacts />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/student-dashboard/*" element={<StudentHome />} />
@@ -49,7 +50,6 @@ const App = () => (
               <Route path="/curator-dashboard/*" element={<CuratorHome />} />
               <Route path="/admin-dashboard/*" element={<AdminHome />} />
               <Route path="/reports" element={<Reports />} />
-              <Route path="/faq" element={<FAQ />} />
               <Route path="/support" element={<Support />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
