@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star } from 'lucide-react';
+import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star, ChevronRight, ArrowRight, Sparkles, Clock, CheckCircle2, Globe, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -71,66 +71,150 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 lg:py-32">
-        <div className="absolute inset-0 bg-gradient-hero-radial"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+      {/* Hero Section - Improved with F-pattern and better visual hierarchy */}
+      <section className="relative overflow-hidden py-24 lg:py-32">
+        {/* Animated background mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.1),transparent_50%)]"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
-                <Badge variant="secondary" className="mr-2">New</Badge>
-                <span className="text-sm font-medium">Advanced AI Trading Signals</span>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+            {/* Left Content - Following F-pattern for better readability */}
+            <div className="lg:w-1/2 space-y-8">
+              {/* Trust indicator */}
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm animate-fade-in">
+                <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+                <span className="text-sm font-semibold text-foreground">Trusted by 10,000+ Traders</span>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
-                {t('heroTitle')}
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 animate-slide-up leading-relaxed">
-                {t('heroSubtitle')}
-              </p>
+              
+              {/* Main headline with better contrast */}
+              <div className="space-y-6">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight animate-fade-in">
+                  <span className="block text-foreground">Master the Art of</span>
+                  <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                    Professional Trading
+                  </span>
+                </h1>
+                
+                {/* Supporting text with optimal line length */}
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl animate-slide-up">
+                  {t('heroSubtitle')}
+                </p>
+              </div>
+              
+              {/* CTA Buttons - Fitts's Law: Larger touch targets */}
               <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
                 <Link to="/register">
-                  <Button size="lg" className="bg-gradient-trading hover:shadow-intense transition-all duration-300 transform hover:scale-105">
-                    {t('heroButton')}
+                  <Button 
+                    size="lg" 
+                    className="min-w-[200px] h-14 text-base font-semibold bg-gradient-to-r from-primary to-accent hover:shadow-intense transition-all duration-300 hover:-translate-y-1 group"
+                  >
+                    <span>{t('heroButton')}</span>
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Link to="/about">
-                  <Button variant="outline" size="lg" className="hover:bg-gradient-card hover:shadow-float transition-all duration-300">
-                    {t('learnMore')}
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="min-w-[200px] h-14 text-base font-semibold border-2 hover:bg-primary/5 hover:border-primary transition-all duration-300"
+                  >
+                    <span>{t('learnMore')}</span>
+                    <ChevronRight className="ml-2 w-4 h-4" />
                   </Button>
                 </Link>
               </div>
-            </div>
-            <div className="lg:w-1/2 flex justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-trading opacity-20 rounded-full blur-3xl animate-pulse-glow"></div>
-                <div className="relative z-10 p-8 rounded-full bg-gradient-card backdrop-blur-sm border border-primary/20 shadow-intense">
-                  <img 
-                    src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
-                    alt="Momentum Trading Pro" 
-                    className="w-48 h-48 lg:w-64 lg:h-64 object-contain animate-float"
-                  />
+              
+              {/* Social proof indicators */}
+              <div className="flex items-center gap-8 pt-4 animate-fade-in">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-background" />
+                  ))}
                 </div>
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-profit rounded-full opacity-60 blur-xl animate-pulse"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-trading rounded-full opacity-40 blur-2xl animate-pulse delay-1000"></div>
+                <div className="text-sm">
+                  <div className="flex items-center gap-1 text-yellow-500">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground">4.9/5 from 2,000+ reviews</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Visual - Enhanced with depth and animation */}
+            <div className="lg:w-1/2 flex justify-center">
+              <div className="relative w-full max-w-lg">
+                {/* Floating elements for depth */}
+                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl animate-pulse" />
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-2xl animate-pulse delay-700" />
+                
+                {/* Main visual container */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-3xl animate-pulse-glow" />
+                  <div className="relative bg-gradient-to-br from-card to-secondary p-8 rounded-3xl border border-primary/10 shadow-2xl backdrop-blur-sm">
+                    <img 
+                      src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
+                      alt="Professional Trading Platform" 
+                      className="w-full h-auto object-contain animate-float"
+                    />
+                    
+                    {/* Floating stats cards */}
+                    <div className="absolute -top-4 -right-4 bg-card/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-primary/10 animate-fade-in">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-green-500" />
+                        <span className="text-sm font-bold text-green-500">+24.8%</span>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute -bottom-4 -left-4 bg-card/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-primary/10 animate-fade-in delay-300">
+                      <div className="flex items-center gap-2">
+                        <Users className="w-5 h-5 text-primary" />
+                        <span className="text-sm font-bold">Live Trading</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"></div>
+      {/* Stats Section - Using Progressive Disclosure */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/50 to-background"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="bg-gradient-card rounded-2xl p-6 shadow-card hover:shadow-float transition-all duration-300 border border-primary/10 hover:border-primary/20">
-                  <div className="text-3xl lg:text-4xl font-bold bg-gradient-trading bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
+              <div 
+                key={index} 
+                className="group cursor-pointer"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  {/* Accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Number with animated counter effect */}
+                  <div className="text-3xl lg:text-5xl font-bold mb-2 bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className="text-muted-foreground font-medium">{stat.label}</div>
+                  
+                  {/* Label with better typography */}
+                  <div className="text-sm lg:text-base text-muted-foreground font-medium">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Subtle icon based on index */}
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    {index === 0 && <Users className="w-8 h-8" />}
+                    {index === 1 && <TrendingUp className="w-8 h-8" />}
+                    {index === 2 && <Award className="w-8 h-8" />}
+                    {index === 3 && <Clock className="w-8 h-8" />}
+                  </div>
                 </div>
               </div>
             ))}
@@ -138,92 +222,198 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20">
+      {/* Features Section - Gestalt Principle: Proximity & Similarity */}
+      <section className="py-24 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          {/* Section header with better visual hierarchy */}
+          <div className="text-center mb-20 space-y-4">
+            <Badge variant="outline" className="mb-4">
+              <Zap className="w-3 h-3 mr-1" />
+              Core Features
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               {t('features')}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('discoverFeatures')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Feature cards with better interaction design */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-intense transition-all duration-500 hover:scale-105 group bg-gradient-card border-primary/10 hover:border-primary/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-border opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardHeader className="relative z-10">
-                  <div className="mx-auto w-16 h-16 bg-gradient-trading rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-glow transition-all duration-300 shadow-float">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  <CardDescription className="text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-trading transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-              </Card>
+              <div
+                key={index}
+                className="group relative"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <Card className="h-full relative bg-card/50 backdrop-blur-sm border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Progress indicator */}
+                  <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000" />
+                  
+                  <CardHeader className="relative z-10 text-center space-y-4">
+                    {/* Icon with better visual feedback */}
+                    <div className="relative mx-auto">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                      <div className="relative w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center transform group-hover:rotate-3 transition-transform duration-300">
+                        <feature.icon className="w-10 h-10 text-white" />
+                      </div>
+                    </div>
+                    
+                    <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent className="relative z-10 text-center">
+                    <CardDescription className="text-base leading-relaxed">
+                      {feature.description}
+                    </CardDescription>
+                    
+                    {/* Interactive element for engagement */}
+                    <div className="mt-4 flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-sm font-medium">Learn more</span>
+                      <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Course Preview Section */}
-      <section className="py-20 bg-secondary">
+      {/* Course Preview Section - Card layout with Hick's Law consideration */}
+      <section className="py-24 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          {/* Section header */}
+          <div className="text-center mb-16 space-y-4">
+            <Badge variant="outline" className="mb-4">
+              <BookOpen className="w-3 h-3 mr-1" />
+              Popular Courses
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               Featured Courses
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Master trading with our comprehensive curriculum designed by industry experts
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Start with our most popular courses, carefully designed for maximum learning impact
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {/* Course cards with improved information hierarchy */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
             {[
-              { title: "Basic Trading Fundamentals", level: "Beginner", duration: "4 weeks", students: "2,500+", rating: 4.9 },
-              { title: "Advanced Technical Analysis", level: "Advanced", duration: "8 weeks", students: "1,200+", rating: 4.8 },
-              { title: "Risk Management Mastery", level: "Intermediate", duration: "6 weeks", students: "1,800+", rating: 4.9 }
+              { 
+                title: "Basic Trading Fundamentals", 
+                level: "Beginner", 
+                duration: "4 weeks", 
+                students: "2,500+", 
+                rating: 4.9,
+                price: "$299",
+                discount: "20% OFF",
+                modules: 12
+              },
+              { 
+                title: "Advanced Technical Analysis", 
+                level: "Advanced", 
+                duration: "8 weeks", 
+                students: "1,200+", 
+                rating: 4.8,
+                price: "$599",
+                discount: null,
+                modules: 24
+              },
+              { 
+                title: "Risk Management Mastery", 
+                level: "Intermediate", 
+                duration: "6 weeks", 
+                students: "1,800+", 
+                rating: 4.9,
+                price: "$399",
+                discount: "15% OFF",
+                modules: 18
+              }
             ].map((course, index) => (
-              <Card key={index} className="hover:shadow-trading transition-all duration-300 hover:scale-105">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <Badge variant="secondary">{course.level}</Badge>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-medium">{course.rating}</span>
+              <div
+                key={index}
+                className="group relative"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <Card className="h-full relative bg-card/80 backdrop-blur-sm border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                  {/* Discount badge */}
+                  {course.discount && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <Badge className="bg-red-500 text-white border-red-500">
+                        {course.discount}
+                      </Badge>
                     </div>
-                  </div>
-                  <CardTitle className="text-lg">{course.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Duration:</span>
-                      <span className="font-medium">{course.duration}</span>
+                  )}
+                  
+                  {/* Course level indicator bar */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${
+                    course.level === 'Beginner' ? 'from-green-500 to-green-400' :
+                    course.level === 'Intermediate' ? 'from-yellow-500 to-yellow-400' :
+                    'from-red-500 to-red-400'
+                  }`} />
+                  
+                  <CardHeader className="space-y-4">
+                    <div className="flex justify-between items-start">
+                      <Badge variant={course.level === 'Beginner' ? 'secondary' : course.level === 'Intermediate' ? 'outline' : 'destructive'}>
+                        {course.level}
+                      </Badge>
+                      <div className="flex items-center gap-1">
+                        <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                        <span className="text-sm font-bold">{course.rating}</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Students:</span>
-                      <span className="font-medium">{course.students}</span>
+                    
+                    <CardTitle className="text-xl line-clamp-2 group-hover:text-primary transition-colors">
+                      {course.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent className="space-y-4">
+                    {/* Course metrics grid */}
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Clock className="w-4 h-4" />
+                        <span>{course.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Users className="w-4 h-4" />
+                        <span>{course.students}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <BookOpen className="w-4 h-4" />
+                        <span>{course.modules} modules</span>
+                      </div>
+                      <div className="flex items-center gap-2 font-bold text-primary">
+                        <span>{course.price}</span>
+                      </div>
                     </div>
-                  </div>
-                  <Link to="/courses">
-                    <Button className="w-full">View Course</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+                    
+                    {/* CTA Button */}
+                    <Link to="/courses" className="block">
+                      <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <span>View Details</span>
+                        <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
 
+          {/* View all CTA */}
           <div className="text-center">
             <Link to="/courses">
-              <Button variant="outline" size="lg">
-                View All Courses
+              <Button variant="outline" size="lg" className="min-w-[200px]">
+                <span>Explore All Courses</span>
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
           </div>
