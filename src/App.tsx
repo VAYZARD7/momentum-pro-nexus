@@ -24,6 +24,8 @@ import Register from "./pages/Register";
 import Reports from "./pages/Reports";
 import StudentHome from "./pages/student/StudentHome";
 import TeacherHome from "./pages/teacher/TeacherHome";
+import Blog from "./pages/blog/Blog";
+import Article from "./pages/blog/Article";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +45,8 @@ const App = () => (
               <Route path="/prices" element={<Prices />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<Article />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/student-dashboard/*" element={<StudentHome />} />
