@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star, ChevronRight, ArrowRight, Sparkles, Clock, CheckCircle2, Globe, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroTradingImage from '@/assets/hero-trading.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -154,11 +155,11 @@ const Index = () => {
                 {/* Main visual container */}
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-3xl animate-pulse-glow" />
-                  <div className="relative bg-gradient-to-br from-card to-secondary p-8 rounded-3xl border border-primary/10 shadow-2xl backdrop-blur-sm">
+                  <div className="relative overflow-hidden rounded-3xl border border-primary/10 shadow-2xl">
                     <img 
-                      src="/lovable-uploads/701e2577-a558-403d-8c6e-431a07b48399.png" 
+                      src={heroTradingImage} 
                       alt="Professional Trading Platform" 
-                      className="w-full h-auto object-contain animate-float"
+                      className="w-full h-auto object-cover animate-fade-in"
                     />
                     
                     {/* Floating stats cards */}
