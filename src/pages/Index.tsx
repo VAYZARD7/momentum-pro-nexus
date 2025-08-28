@@ -8,6 +8,9 @@ import { Badge } from '@/components/ui/badge';
 import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star, ChevronRight, ArrowRight, Sparkles, Clock, CheckCircle2, Globe, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroTradingImage from '@/assets/hero-trading.jpg';
+import courseBasicTrading from '@/assets/course-basic-trading.jpg';
+import courseTechnicalAnalysis from '@/assets/course-technical-analysis.jpg';
+import courseRiskManagement from '@/assets/course-risk-management.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -315,7 +318,8 @@ const Index = () => {
                 rating: 4.9,
                 price: "$299",
                 discount: "20% OFF",
-                modules: 12
+                modules: 12,
+                image: courseBasicTrading
               },
               { 
                 title: "Advanced Technical Analysis", 
@@ -325,7 +329,8 @@ const Index = () => {
                 rating: 4.8,
                 price: "$599",
                 discount: null,
-                modules: 24
+                modules: 24,
+                image: courseTechnicalAnalysis
               },
               { 
                 title: "Risk Management Mastery", 
@@ -335,7 +340,8 @@ const Index = () => {
                 rating: 4.9,
                 price: "$399",
                 discount: "15% OFF",
-                modules: 18
+                modules: 18,
+                image: courseRiskManagement
               }
             ].map((course, index) => (
               <div
@@ -359,6 +365,16 @@ const Index = () => {
                     course.level === 'Intermediate' ? 'from-yellow-500 to-yellow-400' :
                     'from-red-500 to-red-400'
                   }`} />
+                  
+                  {/* Course Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={course.image} 
+                      alt={course.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
                   
                   <CardHeader className="space-y-4">
                     <div className="flex justify-between items-start">
