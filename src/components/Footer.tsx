@@ -10,7 +10,7 @@ const Footer = () => {
     company: [
       { label: t('about'), href: '/about' },
       { label: t('courses'), href: '/courses' },
-      { label: t('prices'), href: '/prices' },
+      { label: t('blog'), href: '/blog' },
       { label: t('contacts'), href: '/contacts' }
     ],
     support: [
