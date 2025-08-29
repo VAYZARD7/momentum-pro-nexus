@@ -5,9 +5,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star, ChevronRight, ArrowRight, Sparkles, Clock, CheckCircle2, Globe, Zap } from 'lucide-react';
+import { TrendingUp, Users, Award, BookOpen, Target, Shield, UserCheck, Settings, BarChart3, Star, ChevronRight, ArrowRight, Sparkles, Clock, CheckCircle2, Globe, Zap, GraduationCap, DollarSign, LineChart, Wallet, Brain, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroTradingImage from '@/assets/hero-trading.jpg';
+import heroEducationTrading from '@/assets/hero-education-trading.jpg';
 import courseBasicTrading from '@/assets/course-basic-trading.jpg';
 import courseTechnicalAnalysis from '@/assets/course-technical-analysis.jpg';
 import courseRiskManagement from '@/assets/course-risk-management.jpg';
@@ -17,19 +17,19 @@ const Index = () => {
 
   const features = [
     {
-      icon: TrendingUp,
-      title: t('expertTraining'),
-      description: t('expertTrainingDesc')
+      icon: LineChart,
+      title: 'Live Market Training',
+      description: 'Learn with real-time market data and live trading simulations'
     },
     {
-      icon: Target,
-      title: t('practicalApproach'),
-      description: t('practicalApproachDesc')
+      icon: GraduationCap,
+      title: 'Professional Certification',
+      description: 'Earn recognized certificates upon course completion'
     },
     {
-      icon: Award,
-      title: t('certification'),
-      description: t('certificationDesc')
+      icon: Brain,
+      title: 'Expert-Led Classes',
+      description: 'Learn from professional traders with years of experience'
     }
   ];
 
@@ -75,36 +75,92 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section - Improved with F-pattern and better visual hierarchy */}
+      {/* Hero Section - Clear Trading School Identity */}
       <section className="relative overflow-hidden py-24 lg:py-32">
-        {/* Animated background mesh */}
+        {/* Animated background with trading patterns */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.15),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent)/0.1),transparent_50%)]"></div>
         
+        {/* Floating trading indicators */}
+        <div className="absolute top-20 left-10 animate-pulse">
+          <div className="bg-green-500/20 rounded-full p-3">
+            <TrendingUp className="w-8 h-8 text-green-500" />
+          </div>
+        </div>
+        <div className="absolute bottom-20 right-10 animate-pulse delay-300">
+          <div className="bg-red-500/20 rounded-full p-3">
+            <LineChart className="w-8 h-8 text-red-500" />
+          </div>
+        </div>
+        <div className="absolute top-40 right-20 animate-pulse delay-700">
+          <div className="bg-blue-500/20 rounded-full p-3">
+            <BarChart3 className="w-8 h-8 text-blue-500" />
+          </div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-            {/* Left Content - Following F-pattern for better readability */}
+            {/* Left Content - Clear messaging */}
             <div className="lg:w-1/2 space-y-8">
-              {/* Trust indicator */}
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm animate-fade-in">
-                <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-                <span className="text-sm font-semibold text-foreground">Trusted by 10,000+ Traders</span>
+              {/* Clear school indicator with icons */}
+              <div className="flex flex-wrap gap-3">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm animate-fade-in">
+                  <GraduationCap className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-semibold text-foreground">Online Trading School</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-sm animate-fade-in delay-100">
+                  <Trophy className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-semibold text-foreground">Certified Education</span>
+                </div>
               </div>
               
-              {/* Main headline with better contrast */}
+              {/* Main headline with trading education focus */}
               <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-4 animate-fade-in">
+                  <div className="flex gap-2">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-400 rounded-lg flex items-center justify-center">
+                      <TrendingUp className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                      <BookOpen className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-400 rounded-lg flex items-center justify-center">
+                      <Brain className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </div>
+                
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight animate-fade-in">
-                  <span className="block text-foreground">Master the Art of</span>
+                  <span className="block text-foreground flex items-center gap-3">
+                    <GraduationCap className="w-12 h-12 lg:w-16 lg:h-16 text-primary inline-block" />
+                    Learn Trading
+                  </span>
                   <span className="block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                    Professional Trading
+                    From Expert Traders
                   </span>
                 </h1>
                 
-                {/* Supporting text with optimal line length */}
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl animate-slide-up">
-                  {t('heroSubtitle')}
-                </p>
+                {/* Clear value proposition with icons */}
+                <div className="space-y-3">
+                  <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl animate-slide-up">
+                    Professional online education platform for financial markets
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-sm font-medium">
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <span>Live Market Analysis</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <span>Expert Instructors</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <span>Certificates</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               {/* CTA Buttons - Fitts's Law: Larger touch targets */}
@@ -148,35 +204,49 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Right Visual - Enhanced with depth and animation */}
+            {/* Right Visual - Clear Trading Education Visual */}
             <div className="lg:w-1/2 flex justify-center">
               <div className="relative w-full max-w-lg">
-                {/* Floating elements for depth */}
-                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl animate-pulse" />
-                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-accent/20 to-transparent rounded-full blur-2xl animate-pulse delay-700" />
+                {/* Trading chart decorations */}
+                <div className="absolute -top-8 -left-8 w-24 h-24 bg-gradient-to-br from-green-500/20 to-transparent rounded-full blur-2xl animate-pulse" />
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl animate-pulse delay-700" />
                 
                 {/* Main visual container */}
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-3xl animate-pulse-glow" />
-                  <div className="relative overflow-hidden rounded-3xl border border-primary/10 shadow-2xl">
+                  <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 shadow-2xl">
                     <img 
-                      src={heroTradingImage} 
-                      alt="Professional Trading Platform" 
+                      src={heroEducationTrading} 
+                      alt="Online Trading School - Live Market Education" 
                       className="w-full h-auto object-cover animate-fade-in"
                     />
                     
-                    {/* Floating stats cards */}
-                    <div className="absolute -top-4 -right-4 bg-card/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-primary/10 animate-fade-in">
+                    {/* Clear educational indicators */}
+                    <div className="absolute top-4 left-4 bg-card/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-primary/10 animate-fade-in">
                       <div className="flex items-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-green-500" />
-                        <span className="text-sm font-bold text-green-500">+24.8%</span>
+                        <GraduationCap className="w-5 h-5 text-primary" />
+                        <span className="text-sm font-bold">Trading Academy</span>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute -top-4 -right-4 bg-green-500/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-green-500/20 animate-fade-in delay-150">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-white" />
+                        <span className="text-sm font-bold text-white">Learn to Trade</span>
                       </div>
                     </div>
                     
                     <div className="absolute -bottom-4 -left-4 bg-card/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-primary/10 animate-fade-in delay-300">
                       <div className="flex items-center gap-2">
                         <Users className="w-5 h-5 text-primary" />
-                        <span className="text-sm font-bold">Live Trading</span>
+                        <span className="text-sm font-bold">10,000+ Students</span>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute bottom-4 right-4 bg-blue-500/95 backdrop-blur-sm rounded-xl p-3 shadow-lg border border-blue-500/20 animate-fade-in delay-450">
+                      <div className="flex items-center gap-2">
+                        <Award className="w-5 h-5 text-white" />
+                        <span className="text-sm font-bold text-white">Certified</span>
                       </div>
                     </div>
                   </div>
@@ -187,9 +257,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section - Using Progressive Disclosure */}
+      {/* Stats Section - Clear Trading School Metrics */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/50 to-background"></div>
+        
+        {/* Trading education banner */}
+        <div className="container mx-auto px-4 mb-12 relative z-10">
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-6 border border-primary/20">
+            <div className="flex items-center justify-center gap-4">
+              <GraduationCap className="w-8 h-8 text-primary" />
+              <h3 className="text-2xl font-bold text-center">
+                Professional Trading Education Platform
+              </h3>
+              <LineChart className="w-8 h-8 text-accent" />
+            </div>
+          </div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {stats.map((stat, index) => (
@@ -201,6 +285,14 @@ const Index = () => {
                 <div className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                   {/* Accent line */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Trading icon for each stat */}
+                  <div className="flex items-center gap-3 mb-3">
+                    {index === 0 && <GraduationCap className="w-6 h-6 text-primary" />}
+                    {index === 1 && <Trophy className="w-6 h-6 text-green-500" />}
+                    {index === 2 && <Brain className="w-6 h-6 text-accent" />}
+                    {index === 3 && <Globe className="w-6 h-6 text-blue-500" />}
+                  </div>
                   
                   {/* Number with animated counter effect */}
                   <div className="text-3xl lg:text-5xl font-bold mb-2 bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
